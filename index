@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Visualization Page</title>
+    <!-- Import Vega-Lite API -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        /* You can add additional styles here */
+        .visualization {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="visualization">
+        <h2>Donut chart showing the distribution of different methodologies used in the measurements</h2>
+        <!-- Container for the first visualization -->
+        <div id="vis1"></div>
+    </div>
+
+    <div class="visualization">
+        <h2>Bar chart of average growth in volume by region.</h2>
+        <!-- Container for the second visualization -->
+        <div id="vis2"></div>
+    </div>
+
+    <!-- Add more visualizations as needed -->
+
+    <div class="visualization">
+        <h2>A bar chart showing the average erect length of males by region.</h2> <!-- Add your title here -->
+        <div id="vis3"></div>
+    </div>
+
+    <div class="visualization">
+        <h2>A line graph showing the relationship between flaccid and erect lengths, with each line representing a different region</h2> <!-- Add your title here -->
+        <div id="vis4"></div>
+    </div>
+
+    <div class="visualization">
+        <h2>A scatter plot showing the relationship between flaccid and erect lengths across different regions.</h2> <!-- Add your title here -->
+        <div id="vis5"></div>
+    </div>
+
+    <script>
+        // Specify the Vega-Lite specifications as JSON objects
+        var spec1 = {
+            
+            
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "Donut chart showing the distribution of different methodologies used in the measurements.",
+            "data": {"url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"},
+            "mark": {
+                "type": "arc",
+                "outerRadius": 200,  // Specifies the outer radius of the donut chart. Adjust as necessary.
+                "innerRadius": 100   // Specifies the inner radius, creating the 'donut' hole. Adjust as necessary.
+            },
+            "encoding": {
+                "theta": {"field": "Method", "type": "nominal", "aggregate": "count"},
+                "color": {"field": "Method", "type": "nominal"}
+            },
+            "view": {"stroke": null},
+            "width": 400,
+            "height": 400
+            
+
+        };
+
+        var spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "Bar chart of average growth in volume by region.",
+            "data": {"url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"},
+            "mark": "bar",
+            "encoding": {
+                "x": {"field": "Region", "type": "nominal", "axis": {"labelAngle": -45}},
+                "y": {"field": "Growth Volume ", "type": "quantitative", "aggregate": "mean"},
+                "color": {"field": "Region", "type": "nominal"}
+            },
+            "width": 800,
+            "height": 500
+        };
+
+        var spec3 = {
+            
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A bar chart showing the average erect length of males by region.",
+            "data": {"url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"},
+            "mark": "bar",
+            "encoding": {
+                "x": {"field": "Region", "type": "nominal", "axis": {"labelAngle": -45}},
+                "y": {"field": "Erect Length (cm)", "type": "quantitative", "aggregate": "mean"},
+                "color": {"field": "Region", "type": "nominal"}
+            },
+            "width": 600,
+            "height": 400
+
+        };
+
+        var spec4 = {
+
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A line graph showing the relationship between flaccid and erect lengths, with each line representing a different region.",
+            "data": {"url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"},
+            "transform": [{"density": "Flaccid Length (cm)", "groupby": ["Region"], "extent": [0, 30]}],
+            "mark": "line",
+            "encoding": {
+                "x": {"field": "value", "type": "quantitative", "title": "Flaccid Length (cm)"},
+                "y": {
+                "field": "density",
+                "type": "quantitative",
+                "title": "Density"
+                },
+                "color": {"field": "Region", "type": "nominal"},
+                "detail": {"field": "Region", "type": "nominal"}
+            },
+            "width": 600,
+            "height": 400
+            
+        };
+
+        var spec5 = {
+            
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A scatter plot showing the relationship between flaccid and erect lengths across different regions.",
+            "data": {"url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"},
+            "mark": "point",
+            "encoding": {
+                "x": {
+                "field": "Flaccid Length (cm)",
+                "type": "quantitative",
+                "axis": {"title": "Flaccid Length (cm)"}
+                },
+                "y": {
+                "field": "Erect Length (cm)",
+                "type": "quantitative",
+                "axis": {"title": "Erect Length (cm)"}
+                },
+                "color": {
+                "field": "Region",
+                "type": "nominal",
+                "legend": {"title": "Region"}
+                },
+                "tooltip": [
+                {"field": "Flaccid Length (cm)", "type": "quantitative"},
+                {"field": "Erect Length (cm)", "type": "quantitative"},
+                {"field": "Region", "type": "nominal"}
+                ]
+            },
+            "width": 600,
+            "height": 400
+
+        };
+
+        // Embed the visualizations in the document
+        vegaEmbed('#vis1', spec1);
+        vegaEmbed('#vis2', spec2);
+        vegaEmbed('#vis3', spec3); // Embed for third visualization
+        vegaEmbed('#vis4', spec4); // Embed for fourth visualization
+        vegaEmbed('#vis5', spec5);
+
+        // Add more embeds for additional visualizations
+    </script>
+
+</body>
+</html>
