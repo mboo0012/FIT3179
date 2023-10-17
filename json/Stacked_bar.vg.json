@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A grouped bar chart showing the comparison between Flaccid and Erect length across different regions.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"
+  },
+  "transform": [
+    {
+      "fold": ["Flaccid Length (cm)", "Erect Length (cm)"],
+      "as": ["Measurement Type", "Value"]
+    },
+    {
+      "aggregate": [
+        {"op": "average", "field": "Value", "as": "Average Length"}
+      ],
+      "groupby": ["Region", "Measurement Type"]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Region",
+      "type": "nominal",
+      "axis": {"title": "Region"},
+      "sort": "-x"
+    },
+    "x": {
+      "field": "Average Length",
+      "type": "quantitative",
+      "axis": {"title": "Average Length (cm)"}
+    },
+    "color": {
+      "field": "Measurement Type",
+      "type": "nominal",
+      "scale": {"range": ["#1f77b4", "#ff7f0e"]},
+      "legend": {"title": "Measurement Type"}
+    },
+    "tooltip": [
+      {"field": "Region", "type": "nominal"},
+      {"field": "Average Length", "type": "quantitative"},
+      {"field": "Measurement Type", "type": "nominal"}
+    ]
+  },
+  "resolve": {"scale": {"x": "independent"}},
+  "width": 400,
+  "padding": 5,
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"labelFontSize": 12, "titleFontSize": 14},
+    "legend": {"labelFontSize": 12, "titleFontSize": 14}
+  }
+}

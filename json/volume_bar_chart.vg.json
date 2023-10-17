@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bar chart of average growth in volume by region.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Region", "type": "nominal", "axis": {"labelAngle": -45}},
+    "y": {
+      "field": "Growth Volume ",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    "color": {"field": "Region", "type": "nominal"}
+  },
+  "width": 800,
+  "height": 500,
+  "config": {}
+}
