@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Donut chart showing the distribution of different methodologies used in the measurements.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"
+  },
+  "mark": {"type": "arc", "outerRadius": 200, "innerRadius": 100},
+  "encoding": {
+    "theta": {"field": "Method", "type": "nominal", "aggregate": "count"},
+    "color": {"field": "Method", "type": "nominal"}
+  },
+  "view": {"stroke": null},
+  "width": 400,
+  "height": 400,
+  "config": {}
+}

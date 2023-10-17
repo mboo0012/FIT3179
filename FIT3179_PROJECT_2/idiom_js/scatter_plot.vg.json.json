@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatter plot showing the relationship between flaccid and erect lengths across different regions.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Flaccid Length (cm)",
+      "type": "quantitative",
+      "axis": {"title": "Flaccid Length (cm)"}
+    },
+    "y": {
+      "field": "Erect Length (cm)",
+      "type": "quantitative",
+      "axis": {"title": "Erect Length (cm)"}
+    },
+    "color": {
+      "field": "Region",
+      "type": "nominal",
+      "legend": {"title": "Region"}
+    },
+    "tooltip": [
+      {"field": "Flaccid Length (cm)", "type": "quantitative"},
+      {"field": "Erect Length (cm)", "type": "quantitative"},
+      {"field": "Region", "type": "nominal"}
+    ]
+  },
+  "width": 600,
+  "height": 400,
+  "config": {}
+}

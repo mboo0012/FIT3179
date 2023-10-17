@@ -1,0 +1,24 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A line graph showing the relationship between flaccid and erect lengths, with each line representing a different region.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mboo0012/FIT3179/main/International%20Study%20on%20Male%20Genital%20Measurements%20Dataset.csv"
+  },
+  "transform": [
+    {"density": "Flaccid Length (cm)", "groupby": ["Region"], "extent": [0, 30]}
+  ],
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Flaccid Length (cm)"
+    },
+    "y": {"field": "density", "type": "quantitative", "title": "Density"},
+    "color": {"field": "Region", "type": "nominal"},
+    "detail": {"field": "Region", "type": "nominal"}
+  },
+  "width": 600,
+  "height": 400,
+  "config": {}
+}
