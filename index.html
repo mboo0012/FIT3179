@@ -17,7 +17,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5; /* Background color for the whole page */
+            background-color: #f5f5f5;
         }
 
         .page {
@@ -31,29 +31,30 @@
 
         .visualization-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px; /* Adjusts spacing between visualization and description */
-            background-color: #e6e6e6; /* Background color for the container */
-            padding: 15px; /* Padding around each container */
-            margin-bottom: 20px; /* Spacing between each visualization block */
-            border-radius: 8px; /* Rounded corners for containers */
-            align-items: stretch; /* Ensures items stretch to fill the space for a cleaner look */
+            flex-direction: column; /* Changed from row to column */
+            gap: 10px;
+            background-color: #e6e6e6;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
         }
 
         .visualization,
         .description {
-            flex: 1; /* Takes up 50% width of the container */
-            min-width: 300px; /* Minimal width for better mobile view */
+            flex: 1;
+            min-width: 300px; /* Minimum width to ensure content visibility */
+            width: 100%; /* Makes sure each element takes full width */
         }
 
         .visualization {
-            padding: 10px; /* Internal spacing */
-            box-sizing: border-box; /* Makes sure padding doesn't add to width */
+            padding: 10px;
+            box-sizing: border-box;
+            height: auto; /* Ensures the height adjusts based on content */
         }
 
         .description {
-            padding: 10px; /* Internal spacing */
-            box-sizing: border-box; /* Makes sure padding doesn't add to width */
+            padding: 10px;
+            box-sizing: border-box;
         }
 
         h2,
@@ -64,17 +65,17 @@
 
         /* Interactive hover styles */
         .visualization-container:hover {
-            background-color: #cccccc; /* Darker grey on hover */
-            transition: background-color 0.3s ease-in-out; /* Smooth transition */
+            background-color: #cccccc;
+            transition: background-color 0.3s ease-in-out;
             cursor: pointer;
         }
 
         .description p {
-            transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+            transition: color 0.3s ease-in-out;
         }
 
         .description:hover p {
-            color: #555; /* Darker color for text on hover */
+            color: #555;
         }
     </style>
 </head>
@@ -89,7 +90,7 @@
             <div class="visualization" id="time-series-of-earthquake-frequencies"></div>
             <div class="description">
                 <h2>World Map: Global Mapping of Average Erect Circumference</h2>
-                <p>Description for Visualization 1...</p>
+                <p>This geospatial representation for “Global male genital circumference comparisons in centimeters” outlines the disparities on average erect poke widths. The visualization uses an equirectangular projection map that provides a worldwide view, enhancing full coverage and ease of location identification. The countries without data have been shaded light gray to indicate areas for future growth where more research or reporting is required.</p>
             </div>
         </div>
 
@@ -98,7 +99,7 @@
             <div class="visualization" id="map-visualization"></div>
             <div class="description">
                 <h2>Analyzing Methodological Diversity: A Breakdown of Techniques in Male Genital Measurement Studies</h2>
-                <p>Description for Visualization 2...</p>
+                <p>The provided donut chart visualization offers a concise yet informative overview of the methodologies employed in a study on male genital measurements. Each segment of the chart signifies a specific technique used, with the segment's size reflecting its prevalence. A key insight from the chart is the identification of the most frequently used method, suggesting it may be favored due to factors like reliability or cost-effectiveness. Conversely, methods occupying smaller segments are less prevalent, possibly pointing to limitations such as higher costs or complex application. The variety of methods depicted underscores the comprehensive nature of the study, as researchers utilized multiple approaches to ensure data richness and reliability. This visualization is not only a statistical summary but also a valuable piece for sparking deeper discussion on research methodologies, guiding future studies, and identifying potential gaps in the current approach.</p>
             </div>
         </div>
 
@@ -107,32 +108,32 @@
             <div class="visualization" id="earthquake-bubble-chart"></div>
             <div class="description">
                 <h2>Regional Variation: Density Distribution of Flaccid Length Measurements</h2>
-                <p>Description for Visualization 3...</p>
+                <p>Depicting this visualization within a line graph, the connection occurs to differ between flaccid lengths in respective geographical segments that possess similar colored lines. This is a clear reflection of the physiological diversity witnessed in the different regions as depicted by separate lines on the graph.</p>
             </div>
         </div>
 
         <!-- Visualization and Description Block 4 -->
         <div class="visualization-container">
             <div class="visualization" id="earthquake-magnitude-distribution"></div>
-            <div the “description”>
+            <div class="description">
                 <h2>Correlation Analysis: Erect Length vs. Erect Circumference</h2>
-                <p>Description for Visualization 4...</p>
+                <p>The scatter plot shows comparative analysis of flaccid and erect lengths within different regions across the globe to indicate clear coherence of this two states. Considering each individual point, the consistency (or inconsistency) within a given region is visible, which allows for inference about trends or anomalies in certain areas. The color breakdown by country is assumed because that provides a clearer visualization, making easier to identify and compare the geographical areas.</p>
             </div>
         </div>
     </div>
 
     <script type="text/javascript">
-            var mapVisualizationURL = './json/Donut_chart.vg.json';
-            var earthquakeBubbleChartURL = './json/line_chart.vg.json';
-            var earthquakeMagnitudeDistributionURL = './json/scatter_plot.vg.json';
-            var averageDepthByLocationURL = './json/Stacked_bar.vg.json';
-            var timeSeriesOfEarthquakeFrequenciesURL = './json/worldmap.vg.json';
+        var mapVisualizationURL = './json/Donut_chart.vg.json';
+        var earthquakeBubbleChartURL = './json/line_chart.vg.json';
+        var earthquakeMagnitudeDistributionURL = './json/scatter_plot.vg.json';
+        var averageDepthByLocationURL = './json/Stacked_bar.vg.json';
+        var timeSeriesOfEarthquakeFrequenciesURL = './json/worldmap.vg.json';
 
-            vegaEmbed('#map-visualization', mapVisualizationURL);
-            vegaEmbed('#earthquake-bubble-chart', earthquakeBubbleChartURL);
-            vegaEmbed('#earthquake-magnitude-distribution', earthquakeMagnitudeDistributionURL);
-            vegaEmbed('#average-depth-by-location', averageDepthByLocationURL);
-            vegaEmbed('#time-series-of-earthquake-frequencies', timeSeriesOfEarthquakeFrequenciesURL);
+        // Embed the Vega-Lite visualizations in the respective div elements.
+        vegaEmbed('#map-visualization', mapVisualizationURL, { "width": 400, "height": 300 }); // adjusting dimensions
+        vegaEmbed('#earthquake-bubble-chart', earthquakeBubbleChartURL, { "width": 400, "height": 300 });
+        vegaEmbed('#earthquake-magnitude-distribution', earthquakeMagnitudeDistributionURL, { "width": 400, "height": 300 });
+        vegaEmbed('#time-series-of-earthquake-frequencies', timeSeriesOfEarthquakeFrequenciesURL, { "width": 400, "height": 300 });
     </script>
 
 </body>
