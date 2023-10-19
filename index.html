@@ -15,9 +15,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5; /* Background color for the whole page */
         }
 
         .page {
@@ -32,28 +32,28 @@
         .visualization-container {
             display: flex;
             flex-wrap: wrap;
-            margin-top: 20px;
-            justify-content: center;
-            gap: 20px;
+            gap: 10px; /* Adjusts spacing between visualization and description */
+            background-color: #e6e6e6; /* Background color for the container */
+            padding: 15px; /* Padding around each container */
+            margin-bottom: 20px; /* Spacing between each visualization block */
+            border-radius: 8px; /* Rounded corners for containers */
+            align-items: stretch; /* Ensures items stretch to fill the space for a cleaner look */
         }
 
         .visualization,
         .description {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex-basis: calc(50% - 20px);
-            max-width: 1000px;
-            min-height: 650px;
+            flex: 1; /* Takes up 50% width of the container */
+            min-width: 300px; /* Minimal width for better mobile view */
         }
 
         .visualization {
-            position: relative;
+            padding: 10px; /* Internal spacing */
+            box-sizing: border-box; /* Makes sure padding doesn't add to width */
         }
 
         .description {
-            flex-basis: calc(50% - 20px);
-            padding: 20px;
+            padding: 10px; /* Internal spacing */
+            box-sizing: border-box; /* Makes sure padding doesn't add to width */
         }
 
         h2,
@@ -63,11 +63,10 @@
         }
 
         /* Interactive hover styles */
-        .visualization:hover,
-        .description:hover {
-            background-color: #e6e6e6; /* Light grey, but this color is adjustable */
+        .visualization-container:hover {
+            background-color: #cccccc; /* Darker grey on hover */
+            transition: background-color 0.3s ease-in-out; /* Smooth transition */
             cursor: pointer;
-            transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
         }
 
         .description p {
@@ -75,7 +74,7 @@
         }
 
         .description:hover p {
-            color: #555; /* Slightly darker text on hover, adjustable as needed */
+            color: #555; /* Darker color for text on hover */
         }
     </style>
 </head>
@@ -85,39 +84,39 @@
     <div class="page">
         <h1>International Study on Male Genital Measurements</h1>
 
-        <!-- Chart 1 -->
+        <!-- Visualization and Description Block 1 -->
         <div class="visualization-container">
             <div class="visualization" id="time-series-of-earthquake-frequencies"></div>
             <div class="description">
                 <h2>World Map: Global Mapping of Average Erect Circumference</h2>
-                <p>This geospatial representation for “Global male genital circumference comparisons in centimeters” outlines the disparities on average erect poke widths. The visualization uses an equirectangular projection map that provides a worldwide view, enhancing full coverage and ease of location identification. The countries without data have been shaded light gray to indicate areas for future growth where more research or reporting is required.</p>
+                <p>Description for Visualization 1...</p>
             </div>
         </div>
 
-        <!-- Chart 2 -->
+        <!-- Visualization and Description Block 2 -->
         <div class="visualization-container">
             <div class="visualization" id="map-visualization"></div>
             <div class="description">
                 <h2>Analyzing Methodological Diversity: A Breakdown of Techniques in Male Genital Measurement Studies</h2>
-                <p>The provided donut chart visualization offers a concise yet informative overview of the methodologies employed in a study on male genital measurements. Each segment of the chart signifies a specific technique used, with the segment's size reflecting its prevalence. A key insight from the chart is the identification of the most frequently used method, suggesting it may be favored due to factors like reliability or cost-effectiveness. Conversely, methods occupying smaller segments are less prevalent, possibly pointing to limitations such as higher costs or complex application. The variety of methods depicted underscores the comprehensive nature of the study, as researchers utilized multiple approaches to ensure data richness and reliability. This visualization is not only a statistical summary but also a valuable piece for sparking deeper discussion on research methodologies, guiding future studies, and identifying potential gaps in the current approach.</p>
+                <p>Description for Visualization 2...</p>
             </div>
         </div>
 
-        <!-- Chart 3 -->
+        <!-- Visualization and Description Block 3 -->
         <div class="visualization-container">
             <div class="visualization" id="earthquake-bubble-chart"></div>
             <div class="description">
                 <h2>Regional Variation: Density Distribution of Flaccid Length Measurements</h2>
-                <p>Depicting this visualization within a line graph, the connection occurs to differ between flaccid lengths in respective geographical segments that possess similar colored lines. This is a clear reflection of the physiological diversity witnessed in the different regions as depicted by separate lines on the graph.</p>
+                <p>Description for Visualization 3...</p>
             </div>
         </div>
 
-        <!-- Chart 4 -->
+        <!-- Visualization and Description Block 4 -->
         <div class="visualization-container">
             <div class="visualization" id="earthquake-magnitude-distribution"></div>
-            <div class="description">
+            <div the “description”>
                 <h2>Correlation Analysis: Erect Length vs. Erect Circumference</h2>
-                <p>This scatter plot provides a visual representation of the correlation between erect lengths and circumferences across the globe. Each point on the plot represents a unique combination of these two measurements. The trend line indicates the general correlation between the two, which can be particularly useful for medical and academic purposes.</p>
+                <p>Description for Visualization 4...</p>
             </div>
         </div>
     </div>
