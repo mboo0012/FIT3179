@@ -13,8 +13,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f3f3f3; /* Light grey background for better contrast with black text */
-            color: black; /* Changing the general font color to black */
+            background-color: #311b92; /* Dark Purple */
+            color: black; /* Sets the general font color to white */
             text-align: center; /* Center aligns all text */
         }
 
@@ -30,7 +30,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            background-color: #f3f3f3; /* Maintaining the light grey background */
+            background-color: #311b92; /* Same Dark Purple */
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 8px;
@@ -57,64 +57,63 @@
 
         <!-- Visualization and Description Block 1 -->
         <div class="visualization-container">
-            <div class="visualization" id="visualization1"></div>
+            <div class="visualization" id="time-series-of-earthquake-frequencies"></div>
             <div class="description">
                 <h2>World Map: Global Mapping of Average Erect Circumference</h2>
-                <p>This visualization presents a comprehensive view of the global distribution of average erect penile circumference. Differences in averages may be influenced by various factors including genetics, environment, and health. The map highlights these disparities, providing insight into worldwide trends and patterns.</p>
+                <p>This geospatial representation for “Global male genital circumference comparisons in centimeters” outlines the disparities on average erect poke widths. The visualization uses an equirectangular projection map that provides a worldwide view, enhancing full coverage and ease of location identification. The countries without data have been shaded light gray to indicate areas for future growth where more research or reporting is required.</p>
             </div>
         </div>
 
         <!-- Visualization and Description Block 2 -->
         <div class="visualization-container">
-            <div class="visualization" id="visualization2"></div>
+            <div class="visualization" id="map-visualization"></div>
             <div class="description">
                 <h2>Analyzing Methodological Diversity: A Breakdown of Techniques in Male Genital Measurement Studies</h2>
-                <p>This donut chart offers a breakdown of the methodologies employed across various studies measuring male genitalia. It highlights the diversity of approaches and their respective prevalence in academic and clinical studies, emphasizing the need for standardization in measurement techniques for consistency across studies.</p>
+                <p>The provided donut chart visualization offers a concise yet informative overview of the methodologies employed in a study on male genital measurements. Each segment of the chart signifies a specific technique used, with the segment's size reflecting its prevalence. A key insight from the chart is the identification of the most frequently used method, suggesting it may be favored due to factors like reliability or cost-effectiveness. Conversely, methods occupying smaller segments are less prevalent, possibly pointing to limitations such as higher costs or complex application. The variety of methods depicted underscores the comprehensive nature of the study, as researchers utilized multiple approaches to ensure data richness and reliability. This visualization is not only a statistical summary but also a valuable piece for sparking deeper discussion on research methodologies, guiding future studies, and identifying potential gaps in the current approach.</p>
             </div>
         </div>
 
         <!-- Visualization and Description Block 3 -->
         <div class="visualization-container">
-            <div class="visualization" id="visualization3"></div>
+            <div class="visualization" id="earthquake-bubble-chart"></div>
             <div class="description">
                 <h2>Regional Variation: Density Distribution of Flaccid Length Measurements</h2>
-                <p>This line graph demonstrates the variation in penile flaccid lengths across different regions, illustrating a possible correlation with environmental, cultural, and genetic factors. The graph is instrumental in understanding regional trends and anomalies, contributing to a broader understanding of human biology diversity.</p>
+                <p>Depicting this visualization within a line graph, the connection occurs to differ between flaccid lengths in respective geographical segments that possess similar colored lines. This is a clear reflection of the physiological diversity witnessed in the different regions as depicted by separate lines on the graph.</p>
             </div>
         </div>
 
         <!-- Visualization and Description Block 4 -->
         <div class="visualization-container">
-            <div class="visualization" id="visualization4"></div>
+            <div class="visualization" id="earthquake-magnitude-distribution"></div>
             <div class="description">
                 <h2>Correlation Analysis: Erect Length vs. Flaccid Length</h2>
-                <p>This scatter plot provides a comparative analysis between flaccid and erect lengths, exploring the degree of correlation between the two. It helps to elucidate whether common perceptions about these measurements hold scientific validity and assists in dispelling myths associated with these dimensions.</p>
+                <p>The scatter plot shows comparative analysis of flaccid and erect lengths within different regions across the globe to indicate clear coherence of this two states. Considering each individual point, the consistency (or inconsistency) within a given region is visible, which allows for inference about trends or anomalies in certain areas. The color breakdown by country is assumed because that provides a clearer visualization, making easier to identify and compare the geographical areas.</p>
             </div>
         </div>
 
         <!-- Visualization and Description Block 5 -->
         <div class="visualization-container">
-            <div class="visualization" id="visualization5"></div>
+            <div class="visualization" id="average-depth-by-location"></div>
             <div class="description">
                 <h2>Regional Averages: Comparative Analysis of Flaccid and Erect Lengths</h2>
-                <p>The bar chart compares average flaccid and erect lengths across various regions, offering insights into geographical variations. It serves as a resource for understanding global patterns, potentially influencing medical standards and societal expectations regarding male genitalia sizes.</p>
+                <p>This group bar chart provides a complete view in the form of a grouped bar chart depicting average flaccid and erect lengths for various regions across the world. The chart only eliminates individual variances and looks at the average for each geographic categorisation. This way of representation easily points out regional similarity and dissimilarity in physiology.</p>
             </div>
         </div>
     </div>
 
     <script type="text/javascript">
-        // URL paths to your Vega-Lite specifications (please adjust these URLs to your actual file paths)
-        var specVisualization1 = 'path/to/your/visualization1.vg.json';
-        var specVisualization2 = 'path/to/your/visualization2.vg.json';
-        var specVisualization3 = 'path/to/your/visualization3.vg.json';
-        var specVisualization4 = 'path/to/your/visualization4.vg.json';
-        var specVisualization5 = 'path/to/your/visualization5.vg.json';
+        var mapVisualizationURL = './json/Donut_chart.vg.json';
+        var earthquakeBubbleChartURL = './json/line_chart.vg.json';
+        var earthquakeMagnitudeDistributionURL = './json/scatter_plot.vg.json';
+        var averageDepthByLocationURL = './json/Stacked_bar.vg.json';
+        var timeSeriesOfEarthquakeFrequenciesURL = './json/worldmap.vg.json';
 
         // Embed the Vega-Lite visualizations in the respective div elements.
-        vegaEmbed('#visualization1', specVisualization1, { "width": 400, "height": 300 });
-        vegaEmbed('#visualization2', specVisualization2, { "width": 400, "height": 300 });
-        vegaEmbed('#visualization3', specVisualization3, { "width": 400, "height": 300 });
-        vegaEmbed('#visualization4', specVisualization4, { "width": 400, "height": 300 });
-        vegaEmbed('#visualization5', specVisualization5, { "width": 400, "height": 300 });
+        vegaEmbed('#time-series-of-earthquake-frequencies', timeSeriesOfEarthquakeFrequenciesURL, { "width": 400, "height": 300 });
+        vegaEmbed('#map-visualization', mapVisualizationURL, { "width": 400, "height": 300 });
+        vegaEmbed('#earthquake-bubble-chart', earthquakeBubbleChartURL, { "width": 400, "height": 300 });
+        vegaEmbed('#earthquake-magnitude-distribution', earthquakeMagnitudeDistributionURL, { "width": 400, "height": 300 });
+        vegaEmbed('#average-depth-by-location', averageDepthByLocationURL, { "width": 400, "height": 300 });
     </script>
 
 </body>
