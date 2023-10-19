@@ -17,11 +17,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #e6e6fa; /* Light purple background */
         }
 
         .page {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
         }
 
         h1 {
@@ -31,30 +34,32 @@
 
         .visualization-container {
             display: flex;
-            flex-direction: column; /* Changed from row to column */
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
             gap: 10px;
             background-color: #e6e6e6;
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 8px;
+            width: 100%; /* Ensure container takes full width */
+            max-width: 800px; /* Restrict maximum width */
         }
 
         .visualization,
         .description {
-            flex: 1;
-            min-width: 300px; /* Minimum width to ensure content visibility */
             width: 100%; /* Makes sure each element takes full width */
         }
 
         .visualization {
             padding: 10px;
             box-sizing: border-box;
-            height: auto; /* Ensures the height adjusts based on content */
+            text-align: center; /* Center the visualization */
         }
 
         .description {
             padding: 10px;
             box-sizing: border-box;
+            text-align: center; /* Center the description text */
         }
 
         h2,
@@ -120,7 +125,6 @@
                 <p>The scatter plot shows comparative analysis of flaccid and erect lengths within different regions across the globe to indicate clear coherence of this two states. Considering each individual point, the consistency (or inconsistency) within a given region is visible, which allows for inference about trends or anomalies in certain areas. The color breakdown by country is assumed because that provides a clearer visualization, making easier to identify and compare the geographical areas.</p>
             </div>
         </div>
-    </div>
 
         <!-- Visualization and Description Block 5 -->
         <div class="visualization-container">
@@ -134,17 +138,17 @@
 
     <script type="text/javascript">
         var mapVisualizationURL = './json/Donut_chart.vg.json';
-        var earthquakeBubbleChartURL = './json/line_chart.vg.json';
-        var earthquakeMagnitudeDistributionURL = './json/scatter_plot.vg.json';
-        var averageDepthByLocationURL = './json/Stacked_bar.vg.json';
-        var timeSeriesOfEarthquakeFrequenciesURL = './json/worldmap.vg.json';
+        var timeSeriesURL = './json/World_Map.vg.json';
+        var bubbleChartURL = './json/Bubble_chart.vg.json';
+        var magnitudeDistributionURL = './json/Scatter_plot.vg.json';
+        var averageDepthURL = './json/Group_bar_chart.vg.json';
 
-        // Embed the Vega-Lite visualizations in the respective div elements.
-        vegaEmbed('#map-visualization', mapVisualizationURL, { "width": 400, "height": 300 }); // adjusting dimensions
-        vegaEmbed('#earthquake-bubble-chart', earthquakeBubbleChartURL, { "width": 400, "height": 300 });
-        vegaEmbed('#earthquake-magnitude-distribution', earthquakeMagnitudeDistributionURL, { "width": 400, "height": 300 });
-        vegaEmbed('#time-series-of-earthquake-frequencies', timeSeriesOfEarthquakeFrequenciesURL, { "width": 400, "height": 300 });
-        vegaEmbed('#average-depth-by-location', averageDepthByLocationURL, { "width": 400, "height": 300 });
+        // Embed the visualizations in the placeholders
+        vegaEmbed('#map-visualization', mapVisualizationURL, { "actions": false });
+        vegaEmbed('#time-series-of-earthquake-frequencies', timeSeriesURL, { "actions": false });
+        vegaEmbed('#earthquake-bubble-chart', bubbleChartURL, { "actions": false });
+        vegaEmbed('#earthquake-magnitude-distribution', magnitudeDistributionURL, { "actions": false });
+        vegaEmbed('#average-depth-by-location', averageDepthURL, { "actions": false });
     </script>
 
 </body>
