@@ -61,6 +61,22 @@
             color: #333;
             margin: 0 0 10px 0;
         }
+
+        /* Interactive hover styles */
+        .visualization:hover,
+        .description:hover {
+            background-color: #e6e6e6; /* Light grey, but this color is adjustable */
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
+        }
+
+        .description p {
+            transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+        }
+
+        .description:hover p {
+            color: #555; /* Slightly darker text on hover, adjustable as needed */
+        }
     </style>
 </head>
 
@@ -100,21 +116,13 @@
         <div class="visualization-container">
             <div class="visualization" id="earthquake-magnitude-distribution"></div>
             <div class="description">
-                <h2>Correlation Analysis: Flaccid Versus Erect Lengths Across Global Regions</h2>
-                <p>The scatter plot shows comparative analysis of flaccid and erect lengths within different regions across the globe to indicate clear coherence of this two states. Considering each individual point, the consistency (or inconsistency) within a given region is visible, which allows for inference about trends or anomalies in certain areas. The color breakdown by country is assumed because that provides a clearer visualization, making easier to identify and compare the geographical areas.</p>
+                <h2>Correlation Analysis: Erect Length vs. Erect Circumference</h2>
+                <p>This scatter plot provides a visual representation of the correlation between erect lengths and circumferences across the globe. Each point on the plot represents a unique combination of these two measurements. The trend line indicates the general correlation between the two, which can be particularly useful for medical and academic purposes.</p>
             </div>
         </div>
+    </div>
 
-        <!-- Chart 5 -->
-        <div class="visualization-container">
-            <div class="visualization" id="average-depth-by-location"></div>
-            <div class="description">
-                <h2>Regional Averages: Comparative Analysis of Flaccid and Erect Lengths</h2>
-                <p>This group bar chart provides a complete view in the form of a grouped bar chart depicting average flaccid and erect lengths for various regions across the world. The chart only eliminates individual variances and looks at the average for each geographic categorisation. This way of representation easily points out regional similarity and dissimilarity in physiology.</p>
-            </div>
-        </div>
-
-        <script type="text/javascript">
+    <script type="text/javascript">
             var mapVisualizationURL = './json/Donut_chart.vg.json';
             var earthquakeBubbleChartURL = './json/line_chart.vg.json';
             var earthquakeMagnitudeDistributionURL = './json/scatter_plot.vg.json';
@@ -126,8 +134,7 @@
             vegaEmbed('#earthquake-magnitude-distribution', earthquakeMagnitudeDistributionURL);
             vegaEmbed('#average-depth-by-location', averageDepthByLocationURL);
             vegaEmbed('#time-series-of-earthquake-frequencies', timeSeriesOfEarthquakeFrequenciesURL);
-        </script>
-    </div>
+    </script>
 
 </body>
 
