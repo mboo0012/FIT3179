@@ -8,7 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
+        crossorigin="anonymous">
 
     <style>
         body {
@@ -20,9 +22,6 @@
 
         .page {
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         h1 {
@@ -32,10 +31,10 @@
 
         .visualization-container {
             display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
         }
 
         .visualization,
@@ -43,19 +42,24 @@
             background-color: #fff;
             border: 1px solid #ccc;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            flex-basis: calc(50% - 20px); /* 50% width with 20px gap */
+            flex-basis: calc(50% - 20px);
             max-width: 1000px;
             min-height: 650px;
         }
 
-        .description {
-            margin-top: 20px; /* Add margin to separate paragraphs */
+        .visualization {
+            position: relative;
         }
 
-        h2, p {
+        .description {
+            flex-basis: calc(50% - 20px);
+            padding: 20px;
+        }
+
+        h2,
+        p {
             color: #333;
-            margin: 0 0 10px 0; 
+            margin: 0 0 10px 0;
         }
     </style>
 </head>
