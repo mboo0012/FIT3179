@@ -122,6 +122,16 @@
         </div>
     </div>
 
+        <!-- Visualization and Description Block 5 -->
+        <div class="visualization-container">
+            <div class="visualization" id="average-depth-by-location"></div>
+            <div class="description">
+                <h2>Regional Averages: Comparative Analysis of Flaccid and Erect Lengths</h2>
+                <p>This group bar chart provides a complete view in the form of a grouped bar chart depicting average flaccid and erect lengths for various regions across the world. The chart only eliminates individual variances and looks at the average for each geographic categorisation. This way of representation easily points out regional similarity and dissimilarity in physiology.</p>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript">
         var mapVisualizationURL = './json/Donut_chart.vg.json';
         var earthquakeBubbleChartURL = './json/line_chart.vg.json';
@@ -134,6 +144,7 @@
         vegaEmbed('#earthquake-bubble-chart', earthquakeBubbleChartURL, { "width": 400, "height": 300 });
         vegaEmbed('#earthquake-magnitude-distribution', earthquakeMagnitudeDistributionURL, { "width": 400, "height": 300 });
         vegaEmbed('#time-series-of-earthquake-frequencies', timeSeriesOfEarthquakeFrequenciesURL, { "width": 400, "height": 300 });
+        vegaEmbed('#average-depth-by-location', averageDepthByLocationURL, { "width": 400, "height": 300 });
     </script>
 
 </body>
