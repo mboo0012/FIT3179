@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global Penis Circumference Comparisons in centimetres",
+  "title": "Global Male Genital Circumference Comparisons in centimetres",
   "width": 800,
   "height": 600,
   "projection": {"type": "equirectangular"},
