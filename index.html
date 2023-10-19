@@ -68,6 +68,26 @@
     <div class="page">
         <h1>Internation Study on Male Genital Measurements</h1>
 
+        <!--chart-->
+        <div class="visualization-container">
+            <div class="visualization" id="time-series-of-earthquake-frequencies"></div>
+            <div class="description">
+                <h2>World Map: Global Mapping of Average Erect Circumference</h2>
+                <p>This geospatial representation for “Global penis circumference comparisons in centimeters” outlines the disparities on average erect poke widths. The visualization uses an equirectangular projection map that provides a worldwide view, enhancing full coverage and ease of location identification. The countries without data have been shaded light gray to indicate areas for future growth where more research or reporting is required.
+
+
+Using a color scale of “threshold” colors, which build on the principle that countries could be easily grouped based on defined erect circumference ranges can effectively stratify. This instant visual difference is further emphasized by differences in the intensity of color, facilitating fast “comparison and contrast” between regions. The decision to increase the color counts from light shades, up to deep pink, meaningfully imply an upward trend in intensity and attention according to usual perception.
+
+
+The integration of tooltips serves a dual purpose: it engages the viewer by offering an on-the-spot figure, if possible, enriching interaction and comprehension in general and signaling about region omission that ensures informativeness. Geographically orientated display of physical health data is very helpful in generating regional physiological differences which, for instance, substantiate the necessity of localized medical researches or healthcare planning and also indicate that teaching materials should be adjusted to local reality.
+
+
+
+
+
+
+</p>
+
         <div class="visualization-container">
             <!-- New section for the map visualization -->
             <div class="visualization" id="map-visualization"></div>
@@ -81,8 +101,20 @@
         <div class="visualization-container">
             <div class="visualization" id="earthquake-bubble-chart"></div>
             <div class="description">
-                <h2>Chart</h2>
-                <p>. </p>
+                <h2>Regional Variation: Density Distribution of Flaccid Length Measurements</h2>
+                <p>Depicting this visualization within a line graph, the connection occurs to differ between flaccid lengths in respective geographical segments that possess similar colored lines. This is a clear reflection of the physiological diversity witnessed in the different regions as depicted by separate lines on the graph.
+
+
+Another interesting feature presented by the graph is density axis that does not depict actual lengths but shows how many measurements fall within a certain region and gives a hint of most usual cases instead of outliers. The transformation employs an ‘extent’ parameter so that the trends could be absorbed by stakeholders within a practical and appropriate range.
+
+
+This choice of a line graph for this data is critical in representing the smoothness of the density distributions. The variances are just as crucial for medical and psychological researches because it supports not only identification of similarities in flaccid length within each region. The color differentiation facilitates comparison of these trends and essentially adds to the analytical value of the graph.
+
+
+This graph is important in order to encourage researchers and policymakers to acknowledge natural physiological variances exist across different races, and so healthy standards have a high need for diversity inclusive of health standard. It also emphasizes the need for local studies and personalized healthcare developed using different demographic and genetic profile of each region.
+
+
+</p>
             </div>
         </div>
 
@@ -110,33 +142,11 @@ These tooltips make the analysis interactive, so users can explore exact details
             </div>
         </div>
 
-        <!--chart-->
-        <div class="visualization-container">
-            <div class="visualization" id="time-series-of-earthquake-frequencies"></div>
-            <div class="description">
-                <h2>World Map: Global Mapping of Average Erect Circumference</h2>
-                <p>This geospatial representation for “Global penis circumference comparisons in centimeters” outlines the disparities on average erect poke widths. The visualization uses an equirectangular projection map that provides a worldwide view, enhancing full coverage and ease of location identification. The countries without data have been shaded light gray to indicate areas for future growth where more research or reporting is required.
-
-
-Using a color scale of “threshold” colors, which build on the principle that countries could be easily grouped based on defined erect circumference ranges can effectively stratify. This instant visual difference is further emphasized by differences in the intensity of color, facilitating fast “comparison and contrast” between regions. The decision to increase the color counts from light shades, up to deep pink, meaningfully imply an upward trend in intensity and attention according to usual perception.
-
-
-The integration of tooltips serves a dual purpose: it engages the viewer by offering an on-the-spot figure, if possible, enriching interaction and comprehension in general and signaling about region omission that ensures informativeness. Geographically orientated display of physical health data is very helpful in generating regional physiological differences which, for instance, substantiate the necessity of localized medical researches or healthcare planning and also indicate that teaching materials should be adjusted to local reality.
-
-
-
-
-
-
-</p>
-            </div>
-        </div>
-
-    </div>
+       
 
     <script type="text/javascript">
         var mapVisualizationURL = './json/Donut_chart.vg.json';
-        var earthquakeBubbleChartURL = './json/scatter_plot.json';
+        var earthquakeBubbleChartURL = './json/line_chart.json';
         var earthquakeMagnitudeDistributionURL = './json/scatter_plot.vg.json';
         var averageDepthByLocationURL = './json/Stacked_bar.vg.json';
         var timeSeriesOfEarthquakeFrequenciesURL = './json/worldmap.vg.json';
